@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cryptography & Cybersecurity — Quiz</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="background-grid"></div>
+  <main class="app-shell">
+
+    <!-- PAGE 1: LANDING -->
+    <section id="landingPage" class="page active">
+      <div class="landing-card">
+        <div class="eyebrow">TECHNICAL QUIZ</div>
+        <div class="subject-line">Cryptography &amp; Cybersecurity</div>
+        <p class="landing-subtitle">Test your knowledge across 5 units</p>
+        <button id="getStartedBtn" class="primary-btn">GET STARTED <span>→</span></button>
+      </div>
+    </section>
+
+    <!-- PAGE 2: REGISTRATION -->
+    <section id="registrationPage" class="page">
+      <div class="form-card">
+        <div class="step-label">STEP 01 / 02</div>
+        <h2>Participant Details</h2>
+        <p class="muted">Enter your details to begin the quiz.</p>
+
+        <form id="registrationForm" novalidate>
+          <label for="studentName">Name</label>
+          <input id="studentName" name="studentName" type="text" autocomplete="name"
+                 placeholder="Enter your full name" maxlength="80" required>
+
+          <label for="registerNumber">Register Number</label>
+          <input id="registerNumber" name="registerNumber" type="text" inputmode="numeric"
+                 pattern="[0-9]+" autocomplete="off" placeholder="Enter register number"
+                 maxlength="20" required>
+
+          <p id="registrationError" class="error" aria-live="polite"></p>
+          <button type="submit" class="primary-btn full">START QUIZ <span>→</span></button>
+        </form>
+      </div>
+    </section>
+
+    <!-- PAGE 3: QUIZ -->
+    <section id="quizPage" class="page quiz-page">
+      <div class="quiz-header">
+        <div>
+          <div class="step-label">STEP 02 / 02</div>
+          <h2>Cryptography &amp; Cybersecurity</h2>
+          <p class="muted">20 questions · Select one answer for each question</p>
+        </div>
+        <div class="progress-box">
+          <span id="progressText">1 / 20</span>
+          <div class="progress-track"><div id="progressBar"></div></div>
+        </div>
+      </div>
+
+      <form id="quizForm" class="quiz-list"></form>
+      <div class="quiz-actions">
+        <span class="answer-count" id="answerCount">0 / 20 answered</span>
+        <button id="submitQuizBtn" type="submit" form="quizForm" class="primary-btn submit-btn">SUBMIT QUIZ</button>
+      </div>
+    </section>
+
+    <!-- PAGE 4: SCORE -->
+    <section id="resultPage" class="page">
+      <div class="result-card">
+        <div class="completion-pill">QUIZ SUCCESSFULLY COMPLETED</div>
+        <h2>Your Score</h2>
+
+        <div class="score-meter">
+          <div class="score-ring">
+            <div>
+              <strong id="scoreNumber">0</strong>
+              <span>/ 20</span>
+            </div>
+          </div>
+          <div class="score-copy">
+            <p class="score-caption">FINAL SCORE</p>
+            <h3 id="scoreMessage">Well done!</h3>
+            <p id="resultStudent"></p>
+          </div>
+        </div>
+
+        <div class="result-details">
+          <div><span>Name</span><strong id="resultName"></strong></div>
+          <div><span>Register Number</span><strong id="resultRegister"></strong></div>
+        </div>
+
+        <button id="viewAnswersBtn" class="secondary-btn">VIEW ANSWERS &amp; EXPLANATION <span>→</span></button>
+      </div>
+    </section>
+
+    <!-- PAGE 5: REVIEW -->
+    <section id="reviewPage" class="page review-page">
+      <div class="review-header">
+        <div>
+          <div class="step-label">ANSWER REVIEW</div>
+          <h2>Answers &amp; Explanations</h2>
+          <p class="muted">Only the questions you answered incorrectly are shown below.</p>
+        </div>
+        <div class="review-score"><span id="reviewScore">0 / 20</span></div>
+      </div>
+      <div id="reviewList" class="review-list"></div>
+      <button id="backToResultBtn" class="secondary-btn review-back">← BACK TO SCORE</button>
+    </section>
+
+  </main>
+  <script src="questions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
